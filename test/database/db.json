@@ -1,0 +1,6 @@
+{
+    "mongo": {
+      "url": "mongodb+srv://med:azerty123456@cluster0.o1ofuop.mongodb.net/test"
+    }
+  }
+  

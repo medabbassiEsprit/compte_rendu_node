@@ -1,0 +1,39 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<h1>Liste des produits</h1>
+	<form method="post" action="http://localhost:3000/users/addUser">
+
+  <table border="1">
+    <thead>
+      <th>libelle</th>
+      <th>prix</th>
+       <th>description</th>
+        <th>quantite</th>
+         <th>stock/th>
+          <th>supprimer</th>
+    </thead>
+    <tbody>
+    {% for produit in product %}
+      <tr>
+        <td>{{ produit.libelle }}</td>
+        <td>{{ produit.prix }}</td>
+        <td>{{ produit.description }}</td>
+        <td>{{ produit.quantite }}</td>
+         {% if produit.quantite > 0 %}
+              <td>En stock</td>
+         {% else %}
+          <td>Repture de stock</td>
+         {% endif %}
+         
+        <td><a href="/product/delete/{{ produit.id}}">Supprimer</a>
+        <td><a href="/product/modifier/{{ produit.id}}">modifier</a>
+        
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <a href="http://localhost:3000/users/search">
+
+  </a>
+{% endblock %}
